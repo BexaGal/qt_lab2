@@ -3,6 +3,7 @@
 #include "csvtablemodel.h"
 #include "errorwindow.h"
 #include "editdialog.h"
+#include "addrowdialog.h"
 
 CsvTableModel FileHandler;
 
@@ -58,9 +59,19 @@ void MainWindow::on_action_2_triggered()
 {
     if(!FileHandler.saveToFile("C:/Temp/File")){
         ErrorWindow FileError;
+        FileError.errorMessage = "Failed to save file.";
         if(FileError.exec()){
 
         }
+    }
+}
+
+
+void MainWindow::on_action_3_triggered()
+{
+    AddRowDialog RowsInserter;
+    if (RowsInserter.exec()){
+        FileHandler.insertRows(RowsInserter.fromRow, RowsInserter.rows);
     }
 }
 

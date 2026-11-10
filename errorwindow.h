@@ -13,6 +13,7 @@ class ErrorWindow : public QDialog
 
 public:
     explicit ErrorWindow(QWidget *parent = nullptr);
+    QString errorMessage = "Error!";
     ~ErrorWindow();
 
 private slots:
