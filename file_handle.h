@@ -1,10 +1,10 @@
 #ifndef FILE_HANDLE_H
 #define FILE_HANDLE_H
 
-#include <QObject>
+#include <QAbstractTableModel>
 #include <QFile>
 
-class file_handle
+class file_handle : public QAbstractTableModel
 {
     Q_OBJECT
 public:

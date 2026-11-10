@@ -17,6 +17,15 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow() override;
 
+private slots:
+    void on_action_triggered();
+
+    void on_MainTable_doubleClicked(const QModelIndex &index);
+
+    void on_MainTable_clicked(const QModelIndex &index);
+
+    void on_action_2_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
