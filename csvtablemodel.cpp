@@ -2,6 +2,8 @@
 
 #include <QFile>
 #include <QTextStream>
+#include <QDir>
+#include <QFileInfo>
 
 
 // ---------- Required methods ----------
@@ -169,3 +171,17 @@ bool CsvTableModel::saveToFile(const QString &path) const
     return true;
 }
 
+bool CsvTableModel::createFile(const QString &path, const QStringList &header)
+{
+    // Create the folder if it does not exist yet
+    if (!QDir().mkpath(QFileInfo(path).absolutePath()))
+        return false;
+
+    beginResetModel();
+    m_header = header.isEmpty() ? QStringList{"Column 1", "Column 2", "Column 3"} : header;
+    m_header.resize(3);              // always exactly 3 titles
+    m_rows.clear();                 // new file = no data rows
+    endResetModel();
+
+    return saveToFile(path);        // writes the header line to the file
+}

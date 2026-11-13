@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>30</y>
+      <y>70</y>
       <width>781</width>
-      <height>491</height>
+      <height>471</height>
      </rect>
     </property>
     <property name="autoScrollMargin">
@@ -28,6 +28,42 @@
     </property>
     <property name="editTriggers">
      <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="searchEdit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>551</width>
+      <height>24</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Поиск</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Рабочая область</string>
     </property>
    </widget>
   </widget>
@@ -44,6 +80,7 @@
     <property name="title">
      <string>Опции</string>
     </property>
+    <addaction name="action_4"/>
     <addaction name="action"/>
     <addaction name="action_2"/>
    </widget>
@@ -70,6 +107,11 @@
   <action name="action_3">
    <property name="text">
     <string>Добавить</string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="text">
+    <string>Создать</string>
    </property>
   </action>
  </widget>

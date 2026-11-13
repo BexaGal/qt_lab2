@@ -27,6 +27,7 @@ public:
     // CSV
     bool loadFromFile(const QString &path);
     bool saveToFile(const QString &path) const;
+    bool createFile(const QString &path, const QStringList &header = {});
 
 private:
     QStringList m_header;           // column titles
